@@ -64,14 +64,14 @@ function GM_XHR() {
             onload: function(rsp) {
                 // Populate wrapper object with returned data
                 // including the Greasemonkey specific "responseHeaders"
-                for (k in rsp) {
+                for (var k in rsp) {
                     that[k] = rsp[k];
                 }
                 // now we call onreadystatechange
                 that.onreadystatechange();
             },
             onerror: function(rsp) {
-                for (k in rsp) {
+                for (var k in rsp) {
                     that[k] = rsp[k];
                 }
             }
