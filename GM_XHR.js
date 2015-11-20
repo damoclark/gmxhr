@@ -1,4 +1,5 @@
 // allows using all Jquery AJAX methods in Greasemonkey
+// https://gist.github.com/monperrus/999065
 // inspired from http://ryangreenberg.com/archives/2010/03/greasemonkey_jquery.php
 // works with JQuery 1.5
 // (c) 2011 Martin Monperrus
@@ -74,6 +75,8 @@ function GM_XHR() {
                 for (var k in rsp) {
                     that[k] = rsp[k];
                 }
+                // now we call onreadystatechange
+                that.onreadystatechange();
             }
         });
     };
