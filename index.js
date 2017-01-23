@@ -10,7 +10,7 @@
 // Example usage with JQuery:
 //   $.ajax({
 //     url: '/p/',
-//     xhr: function(){return new gmXhr();},
+//     xhr: function(){return new gmxhr();},
 //     type: 'POST',
 //     success: function(val){
 //        ....
@@ -20,9 +20,9 @@
 /**
  * xmlHttpRequest API wrapper for GM_xmlhttpRequest
  * 
- * @returns {gmXhr} An instance with a compatible API to xmlHttpRequest
+ * @returns {gmxhr} An instance with a compatible API to xmlHttpRequest
  */
-function gmXhr() {
+function gmxhr() {
 	this.type = null;
 	this.url = null;
 	this.async = null;
@@ -33,23 +33,23 @@ function gmXhr() {
 	this.readyState = null;
 }
 
-gmXhr.prototype.abort = function() {
+gmxhr.prototype.abort = function() {
 		this.readyState = 0;
 };
 
-gmXhr.prototype.getAllResponseHeaders = function(name) {
+gmxhr.prototype.getAllResponseHeaders = function(name) {
 	if (this.readyState!=4) return '';
 	return this.responseHeaders;
 };
 
-gmXhr.prototype.getResponseHeader = function(name) {
+gmxhr.prototype.getResponseHeader = function(name) {
 	var regexp = new RegExp('^'+name+': (.*)$','im');
 	var match = regexp.exec(this.responseHeaders);
 	if (match) { return match[1]; }
 	return '';
 };
 
-gmXhr.prototype.open = function(type, url, async, username, password) {
+gmxhr.prototype.open = function(type, url, async, username, password) {
 		this.type = type ? type : null;
 		this.url = url ? url : null;
 		this.async = async ? async : null;
@@ -58,11 +58,11 @@ gmXhr.prototype.open = function(type, url, async, username, password) {
 		this.readyState = 1;
 };
     
-gmXhr.prototype.setRequestHeader = function(name, value) {
+gmxhr.prototype.setRequestHeader = function(name, value) {
 		this.headers[name] = value;
 };
 
-gmXhr.prototype.send = function(data) {
+gmxhr.prototype.send = function(data) {
 	this.data = data;
 	var that = this;
 	// http://wiki.greasespot.net/GM_xmlhttpRequest
@@ -90,4 +90,4 @@ gmXhr.prototype.send = function(data) {
 	});
 };
 
-module.exports = gmXhr ;
+module.exports = gmxhr ;
