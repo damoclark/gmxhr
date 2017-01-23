@@ -1,5 +1,7 @@
 # README
 
+[![NPM](https://nodei.co/npm/gmxhr.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/gmxhr/)
+
 ## Description
 
 `gmxhr` is a `xmlHttpRequest` API wrapper for Greasemonkey's
