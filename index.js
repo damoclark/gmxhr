@@ -1,21 +1,44 @@
-// allows using all Jquery AJAX methods in Greasemonkey
-// https://gist.github.com/damoclark/f01b957797b7dd2c33d6
-// https://gist.github.com/monperrus/999065
-// inspired from http://ryangreenberg.com/archives/2010/03/greasemonkey_jquery.php
-// works with JQuery 1.5
-// (c) 2016 Damien Clark
-// (c) 2011 Martin Monperrus
-// (c) 2010 Ryan Greenberg
-//
-// Example usage with JQuery:
-//   $.ajax({
-//     url: '/p/',
-//     xhr: function(){return new gmxhr();},
-//     type: 'POST',
-//     success: function(val){
-//        ....
-//     }
-//   });
+/**
+ * xmlHttpRequest API wrapper for GM_xmlhttpRequest
+ *
+ * This module allows you to provide a drop-in replacement for xmlHttpRequest
+ * using instead, the Greasemonkey (or Tampermonkey) privileged GM_xmlhttpRequest
+ * function, which is available under the Greasemonkey or Tampermonkey Web
+ * Extensions for Firefox and Chromium-based browsers.
+ *
+ * Can be used to allow jQuery to perform ajax calls using GM_xmlhttpRequest
+ *
+ * e.g.
+ * 
+ * $.ajax({
+ *   url: '/p/',
+ *   xhr: function(){return new gmxhr();},
+ *   type: 'POST',
+ *   success: function(val){
+ *      ....
+ *   }
+ * });
+ *
+ *  Contributions:
+ *  (c) 2016,2017 Damien Clark (https://gist.github.com/damoclark/f01b957797b7dd2c33d6)
+ *  (c) 2011 Martin Monperrus (https://gist.github.com/monperrus/999065)
+ * 
+ *  Original version:
+ *  (c) 2010 Ryan Greenberg (http://ryangreenberg.com/archives/2010/03/greasemonkey_jquery.php)
+ *
+ * Licence: GPL-3.0+
+ * This program is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License as published by the Free Software
+ * Foundation, version.
+ * 
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+ * PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with
+ * this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 
 /**
  * xmlHttpRequest API wrapper for GM_xmlhttpRequest
