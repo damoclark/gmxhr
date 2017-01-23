@@ -1,0 +1,33 @@
+{
+  "name": "gmxhr",
+  "version": "1.0.0",
+  "description": "xmlHttpRequest API wrapper for Greasemonkey's GM_xmlhttpRequest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damoclark/gmxhr.git"
+  },
+  "keywords": [
+    "Greasemonkey",
+    "Tampermonkey",
+    "Userscript",
+    "XHR",
+    "jQuery"
+  ],
+  "author": {
+		"name": "Damien Clark",
+		"email": "damo.clarky@gmail.com",
+		"url": "https://damos.world"
+	},
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/damoclark/gmxhr/issues"
+  },
+  "homepage": "https://github.com/damoclark/gmxhr#readme",
+	"engines": {
+		"node": "*"
+	}
+}
