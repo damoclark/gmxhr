@@ -1,6 +1,6 @@
 {
   "name": "gmxhr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "xmlHttpRequest API wrapper for Greasemonkey's GM_xmlhttpRequest",
   "main": "index.js",
   "scripts": {
