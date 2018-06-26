@@ -65,11 +65,21 @@ gmxhr.prototype.getAllResponseHeaders = function(name) {
 	return this.responseHeaders;
 };
 
-gmxhr.prototype.getResponseHeader = function(name) {
-	var regexp = new RegExp('^'+name+': (.*)$','im');
-	var match = regexp.exec(this.responseHeaders);
-	if (match) { return match[1]; }
-	return '';
+gmxhr.prototype.getResponseHeader = function(header) {
+	var value = null;
+	if (this.responseHeaders) {
+		var regex = new RegExp('^'+header+": (.*)$","igm");
+		var match = regex.exec(this.responseHeaders);
+		var result = [];
+		while (match != null) {
+			result.push(match[1]);
+			match = regex.exec(this.responseHeaders);
+		}
+		if (result.length>0){
+			value=result.join(", ");
+		}
+	}
+	return value;
 };
 
 gmxhr.prototype.open = function(type, url, async, username, password) {
