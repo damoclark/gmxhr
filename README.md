@@ -4,16 +4,21 @@
 
 ## Description
 
-`gmxhr` is a `xmlHttpRequest` API wrapper for Greasemonkey's
+`gmxhr` is a `xmlHttpRequest` API wrapper for Greasemonkey (and derivative) userscript engine's
 [GM_xmlhttpRequest](https://wiki.greasespot.net/GM_xmlhttpRequest)
 function.
 
-It provides a xmlHttpRequest API to the `GM_xmlhttpRequest` function from the
-[Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) and
+It provides a `xmlHttpRequest` API to the `GM_xmlhttpRequest` function from the
+legacy [Greasemonkey v3](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) and
 [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en)
-WebExtensions for Firefox and Chromium-based browsers. This means it can be used
-as a drop-in replacement for higher-level libraries and frameworks for the
-standard xmlHttpRequest class.
+WebExtensions for Firefox and Chromium-based browsers. 
+
+It is also compatible with the [new Greasemonkey 4 API](https://www.greasespot.net/2017/09/greasemonkey-4-for-script-authors.html)
+using `GM.xmlHttpRequest`.
+
+This means it can be used as a drop-in replacement for higher-level libraries and frameworks for the
+standard xmlHttpRequest class, including [superagent](https://github.com/damoclark/superagent-gmxhr) and 
+[axios](https://github.com/damoclark/axios-gmxhr-adapter).
 
 ## Installation
 

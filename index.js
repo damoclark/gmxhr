@@ -98,8 +98,10 @@ gmxhr.prototype.setRequestHeader = function(name, value) {
 gmxhr.prototype.send = function(data) {
 	this.data = data;
 	var that = this;
-	// http://wiki.greasespot.net/GM_xmlhttpRequest
-	GM_xmlhttpRequest({
+	// Detect if using older GM API (or other userscript engines)
+	var agent = (typeof GM_xmlhttpRequest === 'undefined') ? GM.xmlHttpRequest : GM_xmlhttpRequest;
+	// https://wiki.greasespot.net/GM.xmlHttpRequest
+	agent({
 		method: this.type,
 		url: this.url,
 		headers: this.headers,
