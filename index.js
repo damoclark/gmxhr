@@ -107,15 +107,19 @@ gmxhr.prototype.send = function(data) {
 		onload: function(rsp) {
 			// Populate wrapper object with returned data
 			// including the Greasemonkey specific "responseHeaders"
-			for (var k in rsp) {
-				that[k] = rsp[k];
+			var responseKeys = ["readyState", "responseHeaders", "finalUrl", "status", "statusText", "response", "responseText"]
+			for (var k in responseKeys) {
+				if(rsp.hasOwnProperty(responseKeys[k]))
+					that[responseKeys[k]] = rsp[responseKeys[k]];
 			}
 			// now we call onreadystatechange
 			that.onreadystatechange();
 		},
 		onerror: function(rsp) {
-			for (var k in rsp) {
-				that[k] = rsp[k];
+			var responseKeys = ["readyState", "responseHeaders", "finalUrl", "status", "statusText", "response", "responseText"]
+			for (var k in responseKeys) {
+				if(rsp.hasOwnProperty(responseKeys[k]))
+					that[responseKeys[k]] = rsp[responseKeys[k]];
 			}
 			// now we call onreadystatechange
 			that.onreadystatechange();
